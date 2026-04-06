@@ -13,7 +13,7 @@
 	<div id="editor" style="height: 500px; border: solid 1px black;">
 
 	</div>
-	<textarea class="ckeditor" id="teditor"></textarea>
+	<textarea class="ckeditor" ></textarea>
 
 	<script type="module">
 		let id = 'editor'
@@ -35,24 +35,25 @@
 		}
 		CKEDITOR.inline(id, editorOptions) 
 		
-		id = 'teditor'
-		editorEl = document.querySelector('#' + id)
-		editorOptions = {
-			on: {
-				change: function(event) {
-					// console.log(event)
-					// console.log(event.editor.getData())
-					document.querySelector('#' + id).value = event.editor.getData()
-				},
-				blur: function( event ) {
-					console.log(event)
-				}
-			}
-			, customConfig: '/@webhandle/ckeditor-4/files/conf/std-config.js'
-		}
-		CKEDITOR.replace(id, editorOptions) 
+		// id = 'teditor'
+		// editorEl = document.querySelector('#' + id)
+		// editorOptions = {
+		// 	on: {
+		// 		change: function(event) {
+		// 			// console.log(event)
+		// 			// console.log(event.editor.getData())
+		// 			document.querySelector('#' + id).value = event.editor.getData()
+		// 		},
+		// 		blur: function( event ) {
+		// 			console.log(event)
+		// 		}
+		// 	}
+		// 	, customConfig: '/@webhandle/ckeditor-4/files/conf/std-config.js'
+		// }
+		// CKEDITOR.replace(id, editorOptions) 
 	</script>
 
+__::@webhandle/ckeditor-4/convertTextareas__
 
 
 

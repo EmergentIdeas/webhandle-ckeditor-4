@@ -1,6 +1,6 @@
 {
   "name": "@webhandle/ckeditor-4",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -25,4 +25,9 @@
     "@webhandle/initialize-webhandle-component": "^1.0.4",
     "ckeditor4": "4.22"
   }
+  , "files": [
+	"initialize-webhandle-component.mjs"
+	, "public"
+	, "README.md"
+  ]
 }
