@@ -27,7 +27,7 @@ To get everything ready:
 
 ```
 
-or just to convert textarea elements marked with class `.ckeditor`
+or just to convert textarea elements marked with class `.html-editor`
 
 ```html
 __::@webhandle/ckeditor-4/convertTextareas__

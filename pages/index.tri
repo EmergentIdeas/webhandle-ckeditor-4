@@ -13,7 +13,7 @@
 	<div id="editor" style="height: 500px; border: solid 1px black;">
 
 	</div>
-	<textarea class="ckeditor" ></textarea>
+	<textarea class="html-editor" ></textarea>
 
 	<script type="module">
 		let id = 'editor'

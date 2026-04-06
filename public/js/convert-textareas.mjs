@@ -1,6 +1,6 @@
 
-let editorId = (new Date()).getTime
-let areas = document.querySelectorAll('textarea.ckeditor')
+let editorId = (new Date()).getTime()
+let areas = document.querySelectorAll('textarea.html-editor')
 let upgradedAttribute = 'data-ckeditor-upgraded'
 for(const area of areas) {
 	let upgraded = area.getAttribute(upgradedAttribute)
