@@ -1,0 +1,28 @@
+{
+  "name": "@webhandle/ckeditor-4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "run-webhandle ./test.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmergentIdeas/webhandle-ckeditor-4.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/EmergentIdeas/webhandle-ckeditor-4/issues"
+  },
+  "homepage": "https://github.com/EmergentIdeas/webhandle-ckeditor-4#readme",
+  "dependencies": {
+    "@dankolz/picture-ckeditor-plugin": "^1.0.7",
+    "@dankolz/template-ckeditor-plugin": "^1.0.1",
+    "@webhandle/ckeditor-multi-widget-panel": "^1.0.2",
+    "@webhandle/initialize-webhandle-component": "^1.0.4",
+    "ckeditor4": "4.22"
+  }
+}

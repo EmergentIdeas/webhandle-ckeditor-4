@@ -1,0 +1,1 @@
+window.CKEDITOR_BASEPATH = '/@webhandle/ckeditor-4/ck-files/'
