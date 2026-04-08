@@ -13,9 +13,25 @@
 	<div id="editor" style="height: 500px; border: solid 1px black;">
 
 	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	<textarea class="html-editor" ></textarea>
 
+	<br>
+	<br>
+	<br>
+	<br>
+	<button id="convert">convert</button>
+	<div class="edit-content-inline" style="height: 500px; border: solid 1px black;">
+		<p>hello</p>
+
+	</div>
+
 	<script type="module">
+		import {convertEditContentInline} from "ckeditor4-edit-content-inline"
 		let id = 'editor'
 		
 		let editorEl = document.querySelector('#' + id)
@@ -34,6 +50,11 @@
 			, customConfig: '/@webhandle/ckeditor-4/files/conf/std-config.js'
 		}
 		CKEDITOR.inline(id, editorOptions) 
+		
+		let convert = document.querySelector('#convert')
+		convert.addEventListener('click', (evt) => {
+			convertEditContentInline()
+		})
 		
 		// id = 'teditor'
 		// editorEl = document.querySelector('#' + id)

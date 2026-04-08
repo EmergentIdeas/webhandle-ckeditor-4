@@ -1,3 +1,4 @@
+import config from "@webhandle/ckeditor-4/configuration"
 
 let editorId = (new Date()).getTime()
 let areas = document.querySelectorAll('textarea.html-editor')
@@ -21,7 +22,7 @@ for(const area of areas) {
 					area.value = event.editor.getData()
 				}
 			}
-			, customConfig: '/@webhandle/ckeditor-4/files/conf/std-config.js'
+			, customConfig: config.defaultTextareaConfigFile
 		}
 		CKEDITOR.replace(id, editorOptions) 
 	}

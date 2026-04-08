@@ -9,6 +9,8 @@ initializeWebhandleComponent.componentDir = import.meta.dirname
 initializeWebhandleComponent.defaultConfig = {
 	"publicFilesPrefix": '/' + initializeWebhandleComponent.componentName + "/files"
 	, "alwaysProvideResources": false
+	, "defaultTextareaConfigFile": "/@webhandle/ckeditor-4/files/conf/std-config.js"
+	, "defaultInlineConfigFile": "/@webhandle/ckeditor-4/files/conf/std-config.js"
 }
 initializeWebhandleComponent.staticFilePath = 'public'
 initializeWebhandleComponent.templatePath = 'views'
@@ -84,6 +86,29 @@ initializeWebhandleComponent.setup = async function (webhandle, config) {
 			, url: '/@webhandle/ckeditor-4/files/js/load.mjs'
 			, resourceType: 'module'
 		})
+		externalResourceManager.provideResource({
+			mimeType: 'application/javascript'
+			, url: '/@webhandle/ckeditor-4/files/js/edit-content-inline.mjs'
+			, name: 'ckeditor4-edit-content-inline'
+			, resourceType: 'module'
+		})
+		try {
+			let resource = {
+				mimeType: 'application/javascript'
+				, name: '@webhandle/ckeditor-4/configuration'
+				, resourceType: 'module'
+				, cachable: webhandle.development ? false : true
+				, data: {
+					defaultTextareaConfigFile: config.defaultTextareaConfigFile
+					, defaultInlineConfigFile: config.defaultInlineConfigFile
+				}
+			}
+			externalResourceManager.provideResource(resource)
+
+		}
+		catch(e){
+			console.log(e)
+		}
 		// externalResourceManager.includeResource({
 		// 	mimeType: 'text/css'
 		// 	, url: '/@webhandle/ckeditor-4/files/styles.css'

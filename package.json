@@ -1,8 +1,8 @@
 {
   "name": "@webhandle/ckeditor-4",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
-  "main": "index.js",
+  "main": "initialize-webhandle-component.mjs",
   "scripts": {
     "test": "run-webhandle ./test.mjs"
   },
