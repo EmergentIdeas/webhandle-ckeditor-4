@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js __pageType__ ">
+<head>
+<meta charset="UTF-8">
+
+<title>Browse for File</title>
+<meta name="viewport" content="width=device-width" />
+<meta name="built-by" content="Dan Kolz of Emergent Ideas" />
+<script>
+	var webpdetect = function() {
+		function addClass(className) {
+			document.getElementsByTagName('html')[0].classList.add(className)
+		}
+		function removeClass(className) {
+			document.getElementsByTagName('html')[0].classList.remove(className)
+		}
+		var img = new Image()
+		img.onload = function() { addClass('webp') }
+		img.onerror = function() { addClass('no-webp') }
+		img.src = 'data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA='
+		
+		removeClass('no-js')
+	}
+	webpdetect()
+</script>
+
+__externalResourceManager.render()__
+
+
+
+
+<meta name="robots" content="noindex" />
+
+</head>
+<body class="modern ready-to-load-img">

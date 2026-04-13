@@ -1,6 +1,6 @@
 {
   "name": "@webhandle/ckeditor-4",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "initialize-webhandle-component.mjs",
   "scripts": {
@@ -19,15 +19,17 @@
   },
   "homepage": "https://github.com/EmergentIdeas/webhandle-ckeditor-4#readme",
   "dependencies": {
-    "@dankolz/picture-ckeditor-plugin": "^1.0.7",
-    "@dankolz/template-ckeditor-plugin": "^1.0.1",
+    "@dankolz/picture-ckeditor-plugin": "^1.0.8",
+    "@dankolz/template-ckeditor-plugin": "^1.0.2",
     "@webhandle/ckeditor-multi-widget-panel": "^1.0.2",
     "@webhandle/initialize-webhandle-component": "^1.0.4",
+    "@webhandle/site-editor-bridge": "^1.0.5",
     "ckeditor4": "4.22"
-  }
-  , "files": [
-	"initialize-webhandle-component.mjs"
-	, "public"
-	, "README.md"
+  },
+  "files": [
+    "initialize-webhandle-component.mjs",
+    "public",
+    "README.md",
+	"views"
   ]
 }

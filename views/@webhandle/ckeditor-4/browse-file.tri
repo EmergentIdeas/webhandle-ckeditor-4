@@ -1,0 +1,82 @@
+__::./dialog-pre__
+__::@webhandle/tree-file-browser/addExternalResources__
+__::@webhandle/ckeditor-4/addExternalResources__
+<section class="page-page-manager">
+	<div class="webhandle-file-tree-image-browser">
+
+	</div>
+</section>
+<div class="buttons">
+	<button type="button" id="select-file">Select</button>
+</div>
+<script type="module">
+	import { siteEditorBridge } from "@webhandle/site-editor-bridge"
+	import { ImageBrowserView, FileSelectDialog } from '@webhandle/tree-file-browser'
+
+	function getUrlParam(paramName) {
+		var reParam = new RegExp('(?:[\?&]|&)' + paramName + '=([^&]+)', 'i');
+		var match = window.location.search.match(reParam);
+
+		return (match && match.length > 1) ? match[1] : null;
+	}
+	let treeHolder = document.querySelector('.webhandle-file-tree-image-browser')
+	if (treeHolder) {
+		let imageBrowserView = new ImageBrowserView({
+			// The source of the files
+			sink: siteEditorBridge.resourceTypes.files
+			// optional, an panel to post events
+			// , eventNotificationPanel: eventPanel
+			// optional, the directory which to open to
+			// , startingDirectory: 'img/empty'
+			// true by default. Will load styles to show the file browser
+			, loadStyles: true
+			, imagesOnly: __imagesOnly || 'false'__
+		})
+		imageBrowserView.appendTo(treeHolder)
+		imageBrowserView.render()
+
+
+
+		function returnFileUrl(url) {
+			var funcNum = getUrlParam('CKEditorFuncNum');
+			window.opener.CKEDITOR.tools.callFunction(funcNum, url);
+			window.close();
+		}
+		imageBrowserView.emitter.on('select', async (evt) => {
+
+		})
+		imageBrowserView.emitter.on('upload', async (evt) => {
+			let url = evt.accessUrls[0]
+			// this.imageBrowserView.cleanup()
+			returnFileUrl(url)
+		})
+
+		document.querySelector('#select-file').addEventListener('click', async (evt) => {
+			let selection = imageBrowserView.getSelectedFiles()
+			let url = await imageBrowserView.getSelectedUrl(selection)
+			returnFileUrl(url)
+		})
+
+	}
+
+</script>
+<style>
+	body {
+		margin: 0;
+	}
+
+	#tree-page-properties-editor {
+		height: 100%;
+
+	}
+
+	.webhandle-file-tree-image-browser .image-browser .image-browser-frame>.directory-side {
+		height: calc(100vh - 40px);
+		max-height: none;
+	}
+
+	.buttons {
+		margin-top: 10px;
+	}
+</style>
+__::./dialog-post__
