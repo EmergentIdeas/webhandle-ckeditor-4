@@ -24,7 +24,7 @@ initializeWebhandleComponent.setup = async function (webhandle, config) {
 
 	let base = webhandle.projectRoot
 	try {
-		let info = webhandle.sinks.project.getFullFileInfo('node_modules/ckeditor4')
+		let info = await webhandle.sinks.project.getFullFileInfo('node_modules/ckeditor4')
 	}
 	catch (e) {
 		base = initializeWebhandleComponent.componentDir
